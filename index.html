@@ -449,7 +449,7 @@
       return (
         <div className="bg-white rounded-lg shadow-md p-4">
           <div className="flex justify-between items-start mb-3">
-            <div className="flex-1">
+            <div className="flex-1 pr-2">
               {/* Event Title - Same size as date/time */}
               <h2 className="text-xl font-bold text-green-900 mb-1">
                 {session.title || 'Golf Session'}
@@ -462,14 +462,8 @@
               <p className="text-sm text-green-700">
                 📍 {session.location}
               </p>
-              {/* Custom message - Smaller text */}
-              {session.message && (
-                <p className="text-sm text-green-600 mt-1 italic border-l-4 border-green-300 pl-2 py-1">
-                  {session.message}
-                </p>
-              )}
             </div>
-            <div className="flex flex-col gap-2 ml-2 items-end">
+            <div className="flex flex-col gap-2 items-end">
               {/* Small Bushwood Logo */}
               <img 
                 src="https://i.ibb.co/9dRb3qs/IMG-0216.webp" 
@@ -494,6 +488,13 @@
               )}
             </div>
           </div>
+
+          {/* Custom message - Full width, spans across */}
+          {session.message && (
+            <p className="text-sm text-green-600 mb-3 italic border-l-4 border-green-300 pl-2 py-1">
+              {session.message}
+            </p>
+          )}
 
           {/* Attendance Summary */}
           <div className="bg-green-50 rounded-lg p-3 mb-3">
