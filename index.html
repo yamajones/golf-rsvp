@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -30,13 +29,10 @@
       originalError.apply(console, args);
     };
   </script>
-
+  
   <!-- Firebase SDK -->
-
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
-
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
-
 </head>
 <body>
   <div id="root"></div>
@@ -240,8 +236,22 @@
       }
 
       return (
-        <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 py-4 px-3">
-          <div className="max-w-3xl mx-auto">
+        <div className="min-h-screen relative py-4 px-3">
+          {/* Background Image */}
+          <div 
+            className="fixed inset-0 z-0"
+            style={{
+              backgroundImage: 'url(https://i.ibb.co/hFw3Wfr/bushwood1.jpg)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat'
+            }}
+          />
+          {/* Semi-transparent overlay */}
+          <div className="fixed inset-0 z-0 bg-white bg-opacity-75" />
+          
+          {/* Content */}
+          <div className="relative z-10 max-w-3xl mx-auto">
             {/* Header */}
             <div className="text-center mb-4">
               <div className="bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-600 inline-block px-6 py-2 rounded-lg shadow-lg mb-2">
@@ -260,7 +270,7 @@
               <div className="bg-white rounded-lg shadow-md p-12 text-center">
                 <div className="text-6xl mb-4">🏌️</div>
                 <p className="text-gray-500 text-lg">No upcoming golf sessions yet.</p>
-                {isAdmin && <p className="text-gray-400 mt-2">Create one above to get started!</p>}
+                {isAdmin && <p className="text-gray-400 mt-2">Create one at the bottom to get started!</p>}
               </div>
             ) : (
               <div className="space-y-4">
@@ -662,6 +672,5 @@
 
     ReactDOM.render(<GolfRSVP />, document.getElementById('root'));
   </script>
-
 </body>
 </html>
